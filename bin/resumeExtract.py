@@ -69,7 +69,7 @@ def combineTuple(redundantTuples):
     #ppList(rt)
     #print "rt====end" * 10
     if rt[0] != []:
-        time = "|".join(rt[0])
+        time = " # ".join(rt[0])
     else:
         time = None
     # redundant fields: company|department|position
@@ -88,7 +88,7 @@ def combineTuple(redundantTuples):
                 oneTuples[i] = 'None'
             else:
                 oneTuples[i] = oneTuples[i].encode('utf-8')
-        print "|||".join(oneTuples)
+        print " | ".join(oneTuples)
     print "combine=====================END"
     return ret
 
@@ -246,7 +246,7 @@ if __name__ == '__main__':
         sys.exit(-1)    
     #if we have toooo many recs(more than 100K),
     #we may optimise here.
-    dbData = R.readData('intro_for_event_extraction', 1)    
+    dbData = R.readData('intro_for_event_extraction', 2)    
 
     extractData(dbData)
     R.quitDb()
